@@ -28,7 +28,7 @@
 
 <!-- 2. MEMBER DER ALLIANZ -->
 <h2>Top 20 Allianzmitglieder – Kraft</h2>
-<table id="member">
+<table id="members">
   <thead>
     <tr><th>Rang</th><th>Spieler</th><th>Kraft</th></tr>
   </thead>
@@ -67,7 +67,7 @@ ladeTabelle("alliances.json", "allianzen", row => `
 `);
 
 // 2. Allianz-Mitglieder
-ladeTabelle("member.json", "member", row => `
+ladeTabelle("members.json", "members", row => `
   <td>${row.rang}</td>
   <td>${row.spieler}</td>
   <td>${row.kraft.toLocaleString("de-DE")}</td>
