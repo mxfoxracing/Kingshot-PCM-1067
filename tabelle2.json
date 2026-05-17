@@ -1,10 +1,12 @@
 [
-  { "rang": 11, "allianz": "[SRG]", "spieler": "Azure D Luffy", "kampfpunkte": 256896743 },
-  { "rang": 12, "allianz": "[PCM]", "spieler": "Aakil",         "kampfpunkte": 256296750 },
-  { "rang": 13, "allianz": "[SRG]", "spieler": "Conquistadork", "kampfpunkte": 252022509 },
-  { "rang": 14, "allianz": "[SRG]", "spieler": "KnallieB",      "kampfpunkte": 239265363 },
-  { "rang": 15, "allianz": "[SRG]", "spieler": "NPC",           "kampfpunkte": 238452850 },
-  { "rang": 16, "allianz": "[SRG]", "spieler": "Burning Fury_불꽃", "kampfpunkte": 234696920 },
-  { "rang": 17, "allianz": "[SRG]", "spieler": "TDavis",        "kampfpunkte": 228181391 },
-  { "rang": 18, "allianz": "[SRG]", "spieler": "Aurora_오로라",  "kampfpunkte": 227570456 }
+  { "rang": 1, "allianz": "[SRG] SHADOWROGUES", "kraft": 18239242854 },
+  { "rang": 2, "allianz": "[PCM] PeaceMakers", "kraft": 11220489089 },
+  { "rang": 3, "allianz": "[BOO] Yah", "kraft": 10260181393 },
+  { "rang": 4, "allianz": "[LoL] LegionOfLoyalty", "kraft": 7686212633 },
+  { "rang": 5, "allianz": "[SIR] Misfits", "kraft": 5592650318 },
+  { "rang": 6, "allianz": "[321] blastoff", "kraft": 1643719881 },
+  { "rang": 7, "allianz": "[NAP] NAPfarms", "kraft": 1072062440 },
+  { "rang": 8, "allianz": "[ZdV] TheMixIsNowOn", "kraft": 840506818 },
+  { "rang": 9, "allianz": "[RGS] ROGUESHADOWS", "kraft": 689708474 },
+  { "rang": 10, "allianz": "[Rex] Flex", "kraft": 628219901 }
 ]
