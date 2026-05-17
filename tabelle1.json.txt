@@ -1,0 +1,12 @@
+[
+  { "rang": 1, "allianz": "[SRG]", "spieler": "Irish Hulk",   "kampfpunkte": 1165898667 },
+  { "rang": 2, "allianz": "[SRG]", "spieler": "DomianaCWA",   "kampfpunkte": 750759073 },
+  { "rang": 3, "allianz": "[SRG]", "spieler": "Montross",     "kampfpunkte": 653234040 },
+  { "rang": 4, "allianz": "[SRG]", "spieler": "Lil Irish",    "kampfpunkte": 437903101 },
+  { "rang": 5, "allianz": "[SRG]", "spieler": "Mr Clean",     "kampfpunkte": 437506969 },
+  { "rang": 6, "allianz": "[SRG]", "spieler": "PROFESSOR",    "kampfpunkte": 389805918 },
+  { "rang": 7, "allianz": "[SRG]", "spieler": "Crixus",       "kampfpunkte": 338537373 },
+  { "rang": 8, "allianz": "[SRG]", "spieler": "Imperial",     "kampfpunkte": 270590958 },
+  { "rang": 9, "allianz": "[SRG]", "spieler": "\"Le Chef\"",  "kampfpunkte": 260561957 },
+  { "rang": 10,"allianz": "[PCM]", "spieler": "minky",        "kampfpunkte": 257633854 }
+]

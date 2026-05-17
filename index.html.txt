@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Spieler Rankings</title>
+<style>
+  body { font-family: Arial, background: #f5f5f5; padding: 20px; }
+  h1 { text-align: center; }
+  h2 { margin-top: 40px; }
+  table { width: 100%; border-collapse: collapse; background: white; margin-bottom: 30px; }
+  th, td { padding: 8px; border-bottom: 1px solid #ddd; text-align: left; }
+  th { background: #333; color: white; }
+  img { width: 100%; max-width: 600px; display: block; margin: 0 auto 20px auto; border-radius: 8px; }
+</style>
+</head>
+<body>
+
+<h1>Top Rankings</h1>
+<img src="titelbild.png" alt="Titelbild">
+
+<h2>Top 10 – High Power</h2>
+<table id="t1">
+  <thead>
+    <tr><th>Rang</th><th>Allianz</th><th>Spieler</th><th>Kampfpunkte</th></tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<h2>Mid Range – Power</h2>
+<table id="t2">
+  <thead>
+    <tr><th>Rang</th><th>Allianz</th><th>Spieler</th><th>Kampfpunkte</th></tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<h2>Lower Top – Power</h2>
+<table id="t3">
+  <thead>
+    <tr><th>Rang</th><th>Allianz</th><th>Spieler</th><th>Kampfpunkte</th></tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+function ladeTabelle(jsonDatei, tableId) {
+  fetch(jsonDatei)
+    .then(r => r.json())
+    .then(data => {
+      const tbody = document.querySelector(`#${tableId} tbody`);
+      data.forEach(row => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${row.rang}</td>
+          <td>${row.allianz}</td>
+          <td>${row.spieler}</td>
+          <td>${row.kampfpunkte?.toLocaleString?.("de-DE") ?? "-"}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    })
+    .catch(err => console.error("Fehler beim Laden von", jsonDatei, err));
+}
+
+ladeTabelle("tabelle1.json", "t1");
+ladeTabelle("tabelle2.json", "t2");
+ladeTabelle("tabelle3.json", "t3");
+</script>
+
+</body>
+</html>

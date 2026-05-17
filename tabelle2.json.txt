@@ -1,0 +1,10 @@
+[
+  { "rang": 11, "allianz": "[SRG]", "spieler": "Azure D Luffy", "kampfpunkte": 256896743 },
+  { "rang": 12, "allianz": "[PCM]", "spieler": "Aakil",         "kampfpunkte": 256296750 },
+  { "rang": 13, "allianz": "[SRG]", "spieler": "Conquistadork", "kampfpunkte": 252022509 },
+  { "rang": 14, "allianz": "[SRG]", "spieler": "KnallieB",      "kampfpunkte": 239265363 },
+  { "rang": 15, "allianz": "[SRG]", "spieler": "NPC",           "kampfpunkte": 238452850 },
+  { "rang": 16, "allianz": "[SRG]", "spieler": "Burning Fury_불꽃", "kampfpunkte": 234696920 },
+  { "rang": 17, "allianz": "[SRG]", "spieler": "TDavis",        "kampfpunkte": 228181391 },
+  { "rang": 18, "allianz": "[SRG]", "spieler": "Aurora_오로라",  "kampfpunkte": 227570456 }
+]
