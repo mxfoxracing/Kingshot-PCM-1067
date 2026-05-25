@@ -29,26 +29,32 @@ h1 {
   margin-top: 10px;
 }
 
-/* MAIN ARTWORK */
-.title-img {
-  width: 100%;
-  max-width: 900px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(255,215,0,0.3);
-}
-
-/* TIMETABLE + SERVERBILD */
-.info-row {
+/* TOP SECTION: TITLE IMAGE LEFT + TIMETABLE RIGHT */
+.top-flex {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
-  margin-top: 10px;
+  margin-top: 20px;
   flex-wrap: wrap;
 }
 
+/* TITLE IMAGE */
+.title-img {
+  width: 100%;
+  max-width: 750px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255,215,0,0.3);
+}
+
+/* RIGHT SIDE: TIMETABLE + SERVERLOGO */
+.right-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* TIMETABLE BOX */
 .info-box {
   background: rgba(20,20,20,0.9);
   padding: 20px;
@@ -70,8 +76,9 @@ h1 {
   padding-left: 18px;
 }
 
+/* SERVERLOGO + MOTTO */
 .server-small {
-  width: 200px;
+  width: 180px;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0,200,255,0.3);
 }
@@ -87,9 +94,16 @@ h1 {
 /* TABLE GRID */
 .table-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.2fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 25px;
   margin-top: 40px;
+}
+
+/* LEFT COLUMN: TOP 10 + TOP 20 */
+.left-tables {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 /* PANELS */
@@ -142,24 +156,29 @@ tr:hover {
 
 <h1>[PCM] PeaceMakers – 1067</h1>
 
-<!-- MAIN ARTWORK -->
-<img src="titelbild.png" class="title-img" alt="Titelbild">
+<!-- TOP SECTION -->
+<div class="top-flex">
 
-<!-- TIMETABLE + SERVERBILD -->
-<div class="info-row">
+  <!-- LEFT: TITLE IMAGE -->
+  <img src="titelbild.png" class="title-img" alt="Titelbild">
 
-  <div class="info-box">
-    <h3>Timetable</h3>
-    <ul>
-      <li>Bear Traps: 13UTC / 19UTC</li>
-      <li>Swordland L1/L2: 14UTC / 19UTC</li>
-      <li>Tri Alliance Clash L1/L2: 14UTC / 19UTC</li>
-    </ul>
-  </div>
+  <!-- RIGHT: TIMETABLE + SERVERLOGO -->
+  <div class="right-info">
 
-  <div>
-    <img src="serverbild.png" class="server-small" alt="Serverbild">
-    <div class="motto">Part of the 1067‑TITANS</div>
+    <div class="info-box">
+      <h3>Timetable</h3>
+      <ul>
+        <li>Bear Traps: 13UTC / 19UTC</li>
+        <li>Swordland L1/L2: 14UTC / 19UTC</li>
+        <li>Tri Alliance Clash L1/L2: 14UTC / 19UTC</li>
+      </ul>
+    </div>
+
+    <div style="text-align:center;">
+      <img src="serverbild.png" class="server-small" alt="Serverbild">
+      <div class="motto">Part of the 1067‑TITANS</div>
+    </div>
+
   </div>
 
 </div>
@@ -167,26 +186,32 @@ tr:hover {
 <!-- TABLE GRID -->
 <div class="table-grid">
 
-  <div class="card">
-    <h2>Top 10 Alliances</h2>
-    <table id="allianzen">
-      <thead>
-        <tr><th>Rank</th><th>Alliance</th><th>Power</th></tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+  <!-- LEFT COLUMN: TOP 10 + TOP 20 -->
+  <div class="left-tables">
+
+    <div class="card">
+      <h2>Top 10 Alliances</h2>
+      <table id="allianzen">
+        <thead>
+          <tr><th>Rank</th><th>Alliance</th><th>Power</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Top 20 Members of PCM</h2>
+      <table id="member">
+        <thead>
+          <tr><th>Rank</th><th>Player</th><th>Power</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
   </div>
 
-  <div class="card">
-    <h2>Top 20 Members of PCM</h2>
-    <table id="member">
-      <thead>
-        <tr><th>Rank</th><th>Player</th><th>Power</th></tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
-
+  <!-- RIGHT COLUMN: TOP 30 -->
   <div class="card">
     <h2>Top 30 Players</h2>
     <table id="spieler">
