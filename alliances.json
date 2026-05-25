@@ -1,12 +1,12 @@
 [
-  { "rang": 1, "allianz": "[SRG] SHADOWROGUES", "kraft": 18239242854 },
-  { "rang": 2, "allianz": "[PCM] PeaceMakers", "kraft": 11220489089 },
-  { "rang": 3, "allianz": "[BOO] Yah", "kraft": 10260181393 },
-  { "rang": 4, "allianz": "[LoL] LegionOfLoyalty", "kraft": 7686212633 },
-  { "rang": 5, "allianz": "[SIR] Misfits", "kraft": 5592650318 },
-  { "rang": 6, "allianz": "[321] blastoff", "kraft": 1643719881 },
-  { "rang": 7, "allianz": "[NAP] NAPfarms", "kraft": 1072062440 },
-  { "rang": 8, "allianz": "[ZdV] TheMixIsNowOn", "kraft": 840506818 },
-  { "rang": 9, "allianz": "[RGS] ROGUESHADOWS", "kraft": 689708474 },
-  { "rang": 10, "allianz": "[Rex] Flex", "kraft": 628219901 }
+  { "rank": 1, "name": "SRG", "power": 16354579406 },
+  { "rank": 2, "name": "PCM", "power": 11455324230 },
+  { "rank": 3, "name": "BOO", "power": 10360463611 },
+  { "rank": 4, "name": "LoL", "power": 8574570624 },
+  { "rank": 5, "name": "SIR", "power": 5715516351 },
+  { "rank": 6, "name": "RGS", "power": 2203029075 },
+  { "rank": 7, "name": "321", "power": 2018656788 },
+  { "rank": 8, "name": "NAP", "power": 1099332599 },
+  { "rank": 9, "name": "SWC", "power": 1080513166 },
+  { "rank": 10, "name": "CWA", "power": 1065767495 }
 ]
