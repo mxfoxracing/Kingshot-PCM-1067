@@ -23,56 +23,42 @@ body::before {
   pointer-events: none;
 }
 
-/* HERO HEADER */
-.hero {
-  position: relative;
-  height: 300px;
-  background: url('titelbild.png') center/cover no-repeat;
-  border-bottom: 2px solid rgba(0,200,255,0.3);
-  box-shadow: 0 0 40px rgba(0,200,255,0.25);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.2), #000);
-}
-
-.hero-title {
-  position: absolute;
-  bottom: 25px;
-  width: 100%;
-  text-align: center;
-  font-size: 48px;
-  color: #00eaff;
-  text-shadow: 0 0 25px #00c3ff, 0 0 50px #0099cc;
-  letter-spacing: 3px;
-}
-
-/* MAIN LAYOUT */
 .container {
   max-width: 1400px;
   margin: auto;
   padding: 20px;
 }
 
-/* TOP SECTION: SERVERBILD + INFOBOX */
-.top-grid {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr;
-  gap: 25px;
-  margin-top: 25px;
+/* TITLE */
+h1 {
+  text-align: center;
+  font-size: 48px;
+  color: #00eaff;
+  text-shadow: 0 0 25px #00c3ff, 0 0 50px #0099cc;
+  letter-spacing: 3px;
+  margin-top: 20px;
 }
 
-.server-img {
+/* TITLE IMAGE */
+.title-img {
   width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 20px auto;
   border-radius: 14px;
   box-shadow: 0 0 25px rgba(0,200,255,0.4);
-  animation: fadeIn 1.2s ease;
 }
 
-/* INFO HOLOGRAM */
+/* TIMETABLE + SERVERBILD */
+.info-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
 .info-box {
   background: rgba(0, 40, 60, 0.55);
   backdrop-filter: blur(6px);
@@ -81,6 +67,7 @@ body::before {
   border: 1px solid rgba(0, 200, 255, 0.4);
   box-shadow: 0 0 25px rgba(0, 200, 255, 0.25);
   animation: float 4s ease-in-out infinite;
+  min-width: 260px;
 }
 
 .info-box h3 {
@@ -95,23 +82,34 @@ body::before {
   padding-left: 18px;
 }
 
-.info-box li {
-  margin-bottom: 6px;
-  font-size: 15px;
+.server-small {
+  width: 220px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(0,200,255,0.4);
 }
 
-/* TABLE PANELS */
-.panel-grid {
+.motto {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00c3ff;
+}
+
+/* TABLE GRID */
+.table-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
-.full-width {
-  grid-column: span 2;
+.table-right {
+  grid-column: 2;
+  grid-row: span 2;
 }
 
+/* PANELS */
 .card {
   background: rgba(0, 25, 40, 0.55);
   backdrop-filter: blur(6px);
@@ -119,7 +117,6 @@ body::before {
   border-radius: 14px;
   border: 1px solid rgba(0, 200, 255, 0.3);
   box-shadow: 0 0 25px rgba(0, 200, 255, 0.15);
-  animation: fadeIn 1.2s ease;
 }
 
 h2 {
@@ -157,11 +154,6 @@ tr:hover {
 }
 
 /* ANIMATIONS */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
@@ -172,18 +164,14 @@ tr:hover {
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <h1 class="hero-title">[PCM] PeaceMakers – 1067</h1>
-</div>
-
 <div class="container">
 
-<!-- TOP SECTION -->
-<div class="top-grid">
-  <img src="titelbild.png" class="server-img" style="max-width:100%;" alt="Titelbild">
+<h1>[PCM] PeaceMakers – 1067</h1>
 
-  <img src="serverbild.png" class="server-img" style="max-width:80%; justify-self:center;" alt="Serverbild">
+<img src="titelbild.png" class="title-img" alt="Titelbild">
+
+<!-- TIMETABLE + SERVERBILD -->
+<div class="info-layout">
 
   <div class="info-box">
     <h3>Timetable</h3>
@@ -193,10 +181,16 @@ tr:hover {
       <li>Tri Alliance Clash L1/L2: 14UTC / 19UTC</li>
     </ul>
   </div>
+
+  <div>
+    <img src="serverbild.png" class="server-small" alt="Serverbild">
+    <div class="motto">Part of the 1067‑TITANS</div>
+  </div>
+
 </div>
 
-<!-- TABLE PANELS -->
-<div class="panel-grid">
+<!-- TABLE GRID -->
+<div class="table-grid">
 
   <div class="card">
     <h2>Top 10 Alliances</h2>
@@ -218,7 +212,7 @@ tr:hover {
     </table>
   </div>
 
-  <div class="card full-width">
+  <div class="card table-right">
     <h2>Top 30 Players</h2>
     <table id="spieler">
       <thead>
@@ -267,4 +261,5 @@ ladeTabelle("player_global.json", "spieler", row => `
 </script>
 
 </body>
+</html>
 </html>
