@@ -28,14 +28,50 @@
     letter-spacing: 2px;
   }
 
-  h2 {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 26px;
-    color: #00eaff;
-    text-shadow: 0 0 12px #00c3ff;
+  /* --- Neuer Bereich: Bild + Timetable nebeneinander --- */
+  .header-flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
   }
 
+  .header-flex img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+  }
+
+  .info-box {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 18px 22px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 200, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+    max-width: 300px;
+  }
+
+  .info-box h3 {
+    margin-top: 0;
+    color: #00eaff;
+    text-shadow: 0 0 10px #00c3ff;
+    font-size: 22px;
+  }
+
+  .info-box ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .info-box li {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  /* --- Rest wie gehabt --- */
   .card {
     background: rgba(20, 20, 20, 0.9);
     padding: 20px;
@@ -43,15 +79,6 @@
     margin-top: 25px;
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
     border: 1px solid rgba(0, 200, 255, 0.2);
-  }
-
-  img {
-    width: 100%;
-    max-width: 650px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 14px;
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
   }
 
   table {
@@ -81,8 +108,7 @@
 
   @media (max-width: 600px) {
     h1 { font-size: 28px; }
-    h2 { font-size: 20px; }
-    td, th { font-size: 13px; }
+    .info-box { max-width: 100%; }
   }
 </style>
 </head>
@@ -91,7 +117,21 @@
 <div class="container">
 
 <h1>[PCM]PeaceMakers - 1067</h1>
-<img src="titelbild.png" alt="Titelbild">
+
+<!-- Neuer Bereich: Titelbild + Serverbild + Timetable -->
+<div class="header-flex">
+  <img src="titelbild.png" alt="Titelbild">
+  <img src="serverbild.png" alt="Serverbild">
+
+  <div class="info-box">
+    <h3>Timetable</h3>
+    <ul>
+      <li>Bear Traps: 13UTC / 19UTC</li>
+      <li>Swordland L1/L2: 14UTC / 19UTC</li>
+      <li>Tri Alliance Clash L1/L2: 14UTC / 19UTC</li>
+    </ul>
+  </div>
+</div>
 
 <!-- ALLIANZEN -->
 <div class="card">
