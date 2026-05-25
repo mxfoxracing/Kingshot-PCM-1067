@@ -8,19 +8,10 @@
 /* GLOBAL */
 body {
   font-family: 'Orbitron', Arial, sans-serif;
-  background: radial-gradient(circle at top, #0a0a0a, #000);
+  background: #000;
   color: #e6f7ff;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle, rgba(0,180,255,0.08), transparent 70%);
-  pointer-events: none;
 }
 
 .container {
@@ -32,11 +23,10 @@ body::before {
 /* TITLE */
 h1 {
   text-align: center;
-  font-size: 48px;
-  color: #00eaff;
-  text-shadow: 0 0 25px #00c3ff, 0 0 50px #0099cc;
-  letter-spacing: 3px;
-  margin-top: 20px;
+  font-size: 46px;
+  color: #ffd700;
+  text-shadow: 0 0 20px #ffcc00;
+  margin-top: 10px;
 }
 
 /* TITLE IMAGE */
@@ -45,35 +35,33 @@ h1 {
   max-width: 900px;
   display: block;
   margin: 20px auto;
-  border-radius: 14px;
-  box-shadow: 0 0 25px rgba(0,200,255,0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255,215,0,0.3);
 }
 
 /* TIMETABLE + SERVERBILD */
-.info-layout {
+.info-row {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 25px;
-  margin-top: 20px;
+  gap: 40px;
+  margin-top: 10px;
   flex-wrap: wrap;
 }
 
 .info-box {
-  background: rgba(0, 40, 60, 0.55);
-  backdrop-filter: blur(6px);
+  background: rgba(20,20,20,0.9);
   padding: 20px;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 200, 255, 0.4);
-  box-shadow: 0 0 25px rgba(0, 200, 255, 0.25);
-  animation: float 4s ease-in-out infinite;
+  border-radius: 12px;
+  border: 1px solid rgba(0,200,255,0.3);
+  box-shadow: 0 0 20px rgba(0,200,255,0.2);
   min-width: 260px;
 }
 
 .info-box h3 {
   margin-top: 0;
   color: #00eaff;
-  text-shadow: 0 0 12px #00c3ff;
+  text-shadow: 0 0 10px #00c3ff;
   font-size: 22px;
 }
 
@@ -83,47 +71,41 @@ h1 {
 }
 
 .server-small {
-  width: 220px;
-  border-radius: 14px;
-  box-shadow: 0 0 20px rgba(0,200,255,0.4);
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,200,255,0.3);
 }
 
 .motto {
   text-align: center;
   margin-top: 8px;
-  font-size: 14px;
-  color: #00eaff;
-  text-shadow: 0 0 10px #00c3ff;
+  font-size: 15px;
+  color: #ffd700;
+  text-shadow: 0 0 10px #ffcc00;
 }
 
 /* TABLE GRID */
 .table-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1.2fr;
   gap: 25px;
   margin-top: 40px;
 }
 
-.table-right {
-  grid-column: 2;
-  grid-row: span 2;
-}
-
 /* PANELS */
 .card {
-  background: rgba(0, 25, 40, 0.55);
-  backdrop-filter: blur(6px);
+  background: rgba(20,20,20,0.9);
   padding: 20px;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 200, 255, 0.3);
-  box-shadow: 0 0 25px rgba(0, 200, 255, 0.15);
+  border-radius: 12px;
+  border: 1px solid rgba(0,200,255,0.3);
+  box-shadow: 0 0 20px rgba(0,200,255,0.15);
 }
 
 h2 {
   text-align: center;
-  font-size: 26px;
+  font-size: 24px;
   color: #00eaff;
-  text-shadow: 0 0 12px #00c3ff;
+  text-shadow: 0 0 10px #00c3ff;
 }
 
 /* TABLES */
@@ -134,30 +116,22 @@ table {
 }
 
 th {
-  background: rgba(0, 60, 90, 0.6);
-  color: #00eaff;
+  background: #222;
+  color: #ffd700;
   padding: 10px;
   text-align: left;
   font-size: 16px;
-  border-bottom: 2px solid #00c3ff;
-  text-shadow: 0 0 10px #00c3ff;
+  border-bottom: 2px solid #444;
 }
 
 td {
   padding: 8px;
-  border-bottom: 1px solid rgba(0, 200, 255, 0.15);
+  border-bottom: 1px solid #333;
   font-size: 15px;
 }
 
 tr:hover {
-  background: rgba(0, 200, 255, 0.08);
-}
-
-/* ANIMATIONS */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
+  background: rgba(255,255,255,0.05);
 }
 </style>
 </head>
@@ -171,7 +145,7 @@ tr:hover {
 <img src="titelbild.png" class="title-img" alt="Titelbild">
 
 <!-- TIMETABLE + SERVERBILD -->
-<div class="info-layout">
+<div class="info-row">
 
   <div class="info-box">
     <h3>Timetable</h3>
@@ -212,7 +186,7 @@ tr:hover {
     </table>
   </div>
 
-  <div class="card table-right">
+  <div class="card">
     <h2>Top 30 Players</h2>
     <table id="spieler">
       <thead>
