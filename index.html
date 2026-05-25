@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>PCM 1067 – Rankings</title>
+
+<style>
 /* GLOBAL */
 body {
   font-family: Arial, sans-serif;
@@ -47,16 +54,7 @@ h1 {
   gap: 20px;
 }
 
-/* TIMETABLE BOX */
-.info-box {
-  background: rgba(20,20,20,0.9);
-  padding: 30px;
-  border-radius: 12px;
-  border: 1px solid rgba(0,200,255,0.3);
-  box-shadow: 0 0 20px rgba(0,200,255,0.2);
-  min-width: 340px;
-}
-
+/* --- AUTHENTISCHER TIMETABLE --- */
 .info-box {
   background: rgba(15, 15, 15, 0.95);
   padding: 35px;
@@ -142,3 +140,108 @@ td {
 tr:hover {
   background: rgba(255,255,255,0.05);
 }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>[PCM] PeaceMakers – 1067</h1>
+
+<!-- TOP SECTION -->
+<div class="top-flex">
+
+  <!-- LEFT: TITLE IMAGE -->
+  <img src="titelbild.png" class="title-img" alt="Titelbild">
+
+  <!-- RIGHT: TIMETABLE + SERVERLOGO -->
+  <div class="right-info">
+
+    <div class="info-box">
+      <h3>Timetable</h3>
+      <ul>
+        <li>Bear Traps: 13UTC / 19UTC</li>
+        <li>Swordland L1/L2: 14UTC / 19UTC</li>
+        <li>Tri Alliance Clash L1/L2: 14UTC / 19UTC</li>
+      </ul>
+    </div>
+
+    <div style="text-align:center;">
+      <img src="serverbild.png" class="server-small" alt="Serverbild">
+      <div class="motto">Part of the 1067‑TITANS</div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- TABLES UNDERNEATH -->
+<div class="card">
+  <h2>Top 10 Alliances</h2>
+  <table id="allianzen">
+    <thead>
+      <tr><th>Rank</th><th>Alliance</th><th>Power</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Top 20 Members of PCM</h2>
+  <table id="member">
+    <thead>
+      <tr><th>Rank</th><th>Player</th><th>Power</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Top 30 Players</h2>
+  <table id="spieler">
+    <thead>
+      <tr><th>Rank</th><th>Alliance</th><th>Player</th><th>Power</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+</div>
+
+<script>
+function ladeTabelle(jsonDatei, tableId, mapper) {
+  fetch(jsonDatei)
+    .then(r => r.json())
+    .then(data => {
+      const tbody = document.querySelector(`#${tableId} tbody`);
+      data.forEach(row => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = mapper(row);
+        tbody.appendChild(tr);
+      });
+    });
+}
+
+ladeTabelle("alliances.json", "allianzen", row => `
+  <td>${row.rang}</td>
+  <td>${row.allianz}</td>
+  <td>${row.kraft.toLocaleString("de-DE")}</td>
+`);
+
+ladeTabelle("members.json", "member", row => `
+  <td>${row.rang}</td>
+  <td>${row.spieler}</td>
+  <td>${row.kraft.toLocaleString("de-DE")}</td>
+`);
+
+ladeTabelle("player_global.json", "spieler", row => `
+  <td>${row.rang}</td>
+  <td>${row.allianz}</td>
+  <td>${row.spieler}</td>
+  <td>${row.kampfpunkte.toLocaleString("de-DE")}</td>
+`);
+</script>
+
+</body>
+</html>
