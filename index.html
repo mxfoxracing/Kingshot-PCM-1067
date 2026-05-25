@@ -5,204 +5,165 @@
 <title>PCM 1067 – Rankings</title>
 
 <style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #050505, #0d0d0d, #111);
+    color: #eee;
+    margin: 0;
+    padding: 0;
+  }
 
-/* ============================
-   PCM-BEREICH ISOLIEREN
-   ============================ */
-#pcm-wrapper * {
-  all: unset;
-  display: revert;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+  }
 
-/* ============================
-   GLOBAL IM PCM-BEREICH
-   ============================ */
-#pcm-wrapper {
-  background: #000;
-  color: #eee;
-  padding: 20px;
-  max-width: 1400px;
-  margin: auto;
-}
+  h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 38px;
+    color: #ffd700;
+    text-shadow: 0 0 15px #ffcc00;
+    letter-spacing: 2px;
+  }
 
-/* TITLE */
-#pcm-wrapper h1 {
-  text-align: center;
-  font-size: 46px;
-  color: #ffd700;
-  text-shadow: 0 0 20px #ffcc00;
-  margin-top: 10px;
-}
+  h2 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 26px;
+    color: #00eaff;
+    text-shadow: 0 0 12px #00c3ff;
+  }
 
-/* TOP SECTION */
-#pcm-wrapper .top-flex {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
+  .card {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 20px;
+    border-radius: 14px;
+    margin-top: 25px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+    border: 1px solid rgba(0, 200, 255, 0.2);
+  }
 
-/* TITLE IMAGE */
-#pcm-wrapper .title-img {
-  width: 100%;
-  max-width: 750px;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(255,215,0,0.3);
-}
+  img {
+    width: 100%;
+    max-width: 650px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+  }
 
-/* RIGHT SIDE */
-#pcm-wrapper .right-info {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
 
-/* TIMETABLE */
-#pcm-wrapper .info-box {
-  background: rgba(15, 15, 15, 0.95);
-  padding: 35px;
-  border-radius: 12px;
-  border: 2px solid #00c3ff;
-  box-shadow: 0 0 25px rgba(0,200,255,0.25);
-  min-width: 360px;
-}
+  th {
+    background: #222;
+    color: #ffd700;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+    border-bottom: 2px solid #444;
+  }
 
-#pcm-wrapper .info-box h3 {
-  margin: 0 0 18px 0;
-  font-size: 36px;
-  font-weight: bold;
-  color: #00eaff;
-  text-shadow: 0 0 12px #00c3ff;
-  border-bottom: 2px solid #00c3ff;
-  padding-bottom: 8px;
-}
+  td {
+    padding: 8px;
+    border-bottom: 1px solid #333;
+    font-size: 15px;
+  }
 
-#pcm-wrapper .info-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+  tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
 
-#pcm-wrapper .info-box li {
-  font-size: 26px;
-  margin: 14px 0;
-  letter-spacing: 0.5px;
-}
-
-/* SERVERLOGO */
-#pcm-wrapper .server-small {
-  width: 180px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,200,255,0.3);
-}
-
-#pcm-wrapper .motto {
-  text-align: center;
-  margin-top: 8px;
-  font-size: 16px;
-  color: #ffd700;
-  text-shadow: 0 0 10px #ffcc00;
-}
-
-/* TABLE PANELS */
-#pcm-wrapper .card {
-  background: rgba(20,20,20,0.9);
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid rgba(0,200,255,0.3);
-  box-shadow: 0 0 20px rgba(0,200,255,0.15);
-  margin-top: 30px;
-}
-
-#pcm-wrapper h2 {
-  text-align: center;
-  font-size: 24px;
-  color: #00eaff;
-  text-shadow: 0 0 10px #00c3ff;
-}
-
-/* TABLES */
-#pcm-wrapper table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-}
-
-#pcm-wrapper th {
-  background: #222;
-  color: #ffd700;
-  padding: 10px;
-  border-bottom: 2px solid #444;
-}
-
-#pcm-wrapper td {
-  padding: 8px;
-  border-bottom: 1px solid #333;
-}
-
-#pcm-wrapper tr:hover {
-  background: rgba(255,255,255,0.05);
-}
-
+  @media (max-width: 600px) {
+    h1 { font-size: 28px; }
+    h2 { font-size: 20px; }
+    td, th { font-size: 13px; }
+  }
 </style>
 </head>
 
 <body>
+<div class="container">
 
-<!-- ============================
-     PCM-BEREICH START
-     ============================ -->
-<div id="pcm-wrapper">
+<h1>[PCM]PeaceMakers - 1067</h1>
+<img src="titelbild.png" alt="Titelbild">
 
-<h1>[PCM] PeaceMakers – 1067</h1>
-
-<div class="top-flex">
-
-  <img src="titelbild.png" class="title-img">
-
-  <div class="right-info">
-
-    <div class="info-box">
-      <h3>Timetable</h3>
-      <ul>
-        <li>Bear Traps: 13UTC / 19UTC</li>
-        <li>Swordland L1/L2: 14UTC / 19UTC</li>
-        <li>Tri Alliance Clash L1/L2: 14UTC / 19UTC</li>
-      </ul>
-    </div>
-
-    <div style="text-align:center;">
-      <img src="serverbild.png" class="server-small">
-      <div class="motto">Part of the 1067‑TITANS</div>
-    </div>
-
-  </div>
-
-</div>
-
+<!-- ALLIANZEN -->
 <div class="card">
   <h2>Top 10 Alliances</h2>
-  <table id="allianzen"><tbody></tbody></table>
+  <table id="allianzen">
+    <thead>
+      <tr><th>Rank</th><th>Alliance</th><th>Power</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 </div>
 
+<!-- MEMBER -->
 <div class="card">
   <h2>Top 20 Members of PCM</h2>
-  <table id="member"><tbody></tbody></table>
+  <table id="member">
+    <thead>
+      <tr><th>Rank</th><th>Player</th><th>Power</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 </div>
 
+<!-- GLOBAL PLAYERS -->
 <div class="card">
   <h2>Top 30 Players</h2>
-  <table id="spieler"><tbody></tbody></table>
+  <table id="spieler">
+    <thead>
+      <tr><th>Rank</th><th>Alliance</th><th>Player</th><th>Power</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 </div>
 
 </div>
-<!-- ============================
-     PCM-BEREICH ENDE
-     ============================ -->
+
+<script>
+function ladeTabelle(jsonDatei, tableId, mapper) {
+  fetch(jsonDatei)
+    .then(r => r.json())
+    .then(data => {
+      const tbody = document.querySelector(`#${tableId} tbody`);
+      data.forEach(row => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = mapper(row);
+        tbody.appendChild(tr);
+      });
+    });
+}
+
+// Alliances
+ladeTabelle("alliances.json", "allianzen", row => `
+  <td>${row.rang}</td>
+  <td>${row.allianz}</td>
+  <td>${row.kraft.toLocaleString("de-DE")}</td>
+`);
+
+// Members
+ladeTabelle("members.json", "member", row => `
+  <td>${row.rang}</td>
+  <td>${row.spieler}</td>
+  <td>${row.kraft.toLocaleString("de-DE")}</td>
+`);
+
+// Global Players
+ladeTabelle("player_global.json", "spieler", row => `
+  <td>${row.rang}</td>
+  <td>${row.allianz}</td>
+  <td>${row.spieler}</td>
+  <td>${row.kampfpunkte.toLocaleString("de-DE")}</td>
+`);
+</script>
 
 </body>
 </html>
