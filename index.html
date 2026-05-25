@@ -5,50 +5,266 @@
 <title>PCM 1067 – Rankings</title>
 
 <style>
-  body {
-    font-family: 'Orbitron', Arial, sans-serif;
-    background: radial-gradient(circle at top, #0a0a0a, #000);
-    color: #e6f7ff;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
+/* GLOBAL */
+body {
+  font-family: 'Orbitron', Arial, sans-serif;
+  background: radial-gradient(circle at top, #0a0a0a, #000);
+  color: #e6f7ff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(circle, rgba(0,180,255,0.08), transparent 70%);
-    pointer-events: none;
-  }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0,180,255,0.08), transparent 70%);
+  pointer-events: none;
+}
 
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-  }
+/* HERO HEADER */
+.hero {
+  position: relative;
+  height: 300px;
+  background: url('titelbild.png') center/cover no-repeat;
+  border-bottom: 2px solid rgba(0,200,255,0.3);
+  box-shadow: 0 0 40px rgba(0,200,255,0.25);
+}
 
-  /* HERO HEADER */
-  .hero-banner {
-    position: relative;
-    height: 260px;
-    background: url('titelbild.png') center/cover no-repeat;
-    border-bottom: 2px solid rgba(0,200,255,0.3);
-    box-shadow: 0 0 40px rgba(0,200,255,0.25);
-  }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2), #000);
+}
 
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.2), #000);
-  }
+.hero-title {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  text-align: center;
+  font-size: 48px;
+  color: #00eaff;
+  text-shadow: 0 0 25px #00c3ff, 0 0 50px #0099cc;
+  letter-spacing: 3px;
+}
 
-  .hero-title {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-    font-size: 42px;
-    color: #00eaff;
-    text-shadow: 0 0 25px #00c3ff, 0 0 50px #0099cc;
-    letter-spacing: 3px;
+/* MAIN LAYOUT */
+.container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* TOP SECTION: SERVERBILD + INFOBOX */
+.top-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.server-img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(0,200,255,0.4);
+  animation: fadeIn 1.2s ease;
+}
+
+/* INFO HOLOGRAM */
+.info-box {
+  background: rgba(0, 40, 60, 0.55);
+  backdrop-filter: blur(6px);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 200, 255, 0.4);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.25);
+  animation: float 4s ease-in-out infinite;
+}
+
+.info-box h3 {
+  margin-top: 0;
+  color: #00eaff;
+  text-shadow: 0 0 12px #00c3ff;
+  font-size: 22px;
+}
+
+.info-box ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.info-box li {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+/* TABLE PANELS */
+.panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.card {
+  background: rgba(0, 25, 40, 0.55);
+  backdrop-filter: blur(6px);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.15);
+  animation: fadeIn 1.2s ease;
+}
+
+h2 {
+  text-align: center;
+  font-size: 26px;
+  color: #00eaff;
+  text-shadow: 0 0 12px #00c3ff;
+}
+
+/* TABLES */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th {
+  background: rgba(0, 60, 90, 0.6);
+  color: #00eaff;
+  padding: 10px;
+  text-align: left;
+  font-size: 16px;
+  border-bottom: 2px solid #00c3ff;
+  text-shadow: 0 0 10px #00c3ff;
+}
+
+td {
+  padding: 8px;
+  border-bottom: 1px solid rgba(0, 200, 255, 0.15);
+  font-size: 15px;
+}
+
+tr:hover {
+  background: rgba(0, 200, 255, 0.08);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1 class="hero-title">[PCM] PeaceMakers – 1067</h1>
+</div>
+
+<div class="container">
+
+<!-- TOP SECTION -->
+<div class="top-grid">
+  <img src="titelbild.png" class="server-img" style="max-width:100%;" alt="Titelbild">
+
+  <img src="serverbild.png" class="server-img" style="max-width:80%; justify-self:center;" alt="Serverbild">
+
+  <div class="info-box">
+    <h3>Timetable</h3>
+    <ul>
+      <li>Bear Traps: 13UTC / 19UTC</li>
+      <li>Swordland L1/L2: 14UTC / 19UTC</li>
+      <li>Tri Alliance Clash L1/L2: 14UTC / 19UTC</li>
+    </ul>
+  </div>
+</div>
+
+<!-- TABLE PANELS -->
+<div class="panel-grid">
+
+  <div class="card">
+    <h2>Top 10 Alliances</h2>
+    <table id="allianzen">
+      <thead>
+        <tr><th>Rank</th><th>Alliance</th><th>Power</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Top 20 Members of PCM</h2>
+    <table id="member">
+      <thead>
+        <tr><th>Rank</th><th>Player</th><th>Power</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="card full-width">
+    <h2>Top 30 Players</h2>
+    <table id="spieler">
+      <thead>
+        <tr><th>Rank</th><th>Alliance</th><th>Player</th><th>Power</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+</div>
+
+</div>
+
+<script>
+function ladeTabelle(jsonDatei, tableId, mapper) {
+  fetch(jsonDatei)
+    .then(r => r.json())
+    .then(data => {
+      const tbody = document.querySelector(`#${tableId} tbody`);
+      data.forEach(row => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = mapper(row);
+        tbody.appendChild(tr);
+      });
+    });
+}
+
+ladeTabelle("alliances.json", "allianzen", row => `
+  <td>${row.rang}</td>
+  <td>${row.allianz}</td>
+  <td>${row.kraft.toLocaleString("de-DE")}</td>
+`);
+
+ladeTabelle("members.json", "member", row => `
+  <td>${row.rang}</td>
+  <td>${row.spieler}</td>
+  <td>${row.kraft.toLocaleString("de-DE")}</td>
+`);
+
+ladeTabelle("player_global.json", "spieler", row => `
+  <td>${row.rang}</td>
+  <td>${row.allianz}</td>
+  <td>${row.spieler}</td>
+  <td>${row.kampfpunkte.toLocaleString("de-DE")}</td>
+`);
+</script>
+
+</body>
+</html>
