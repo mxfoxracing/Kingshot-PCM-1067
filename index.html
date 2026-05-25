@@ -91,21 +91,6 @@ h1 {
   text-shadow: 0 0 10px #ffcc00;
 }
 
-/* TABLE GRID */
-.table-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 25px;
-  margin-top: 40px;
-}
-
-/* LEFT COLUMN: TOP 10 + TOP 20 */
-.left-tables {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
 /* PANELS */
 .card {
   background: rgba(20,20,20,0.9);
@@ -113,6 +98,7 @@ h1 {
   border-radius: 12px;
   border: 1px solid rgba(0,200,255,0.3);
   box-shadow: 0 0 20px rgba(0,200,255,0.15);
+  margin-top: 30px;
 }
 
 h2 {
@@ -183,45 +169,36 @@ tr:hover {
 
 </div>
 
-<!-- TABLE GRID -->
-<div class="table-grid">
+<!-- TABLES UNDERNEATH (ALL UNDER EACH OTHER) -->
 
-  <!-- LEFT COLUMN: TOP 10 + TOP 20 -->
-  <div class="left-tables">
+<div class="card">
+  <h2>Top 10 Alliances</h2>
+  <table id="allianzen">
+    <thead>
+      <tr><th>Rank</th><th>Alliance</th><th>Power</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
 
-    <div class="card">
-      <h2>Top 10 Alliances</h2>
-      <table id="allianzen">
-        <thead>
-          <tr><th>Rank</th><th>Alliance</th><th>Power</th></tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
+<div class="card">
+  <h2>Top 20 Members of PCM</h2>
+  <table id="member">
+    <thead>
+      <tr><th>Rank</th><th>Player</th><th>Power</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
 
-    <div class="card">
-      <h2>Top 20 Members of PCM</h2>
-      <table id="member">
-        <thead>
-          <tr><th>Rank</th><th>Player</th><th>Power</th></tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-
-  </div>
-
-  <!-- RIGHT COLUMN: TOP 30 -->
-  <div class="card">
-    <h2>Top 30 Players</h2>
-    <table id="spieler">
-      <thead>
-        <tr><th>Rank</th><th>Alliance</th><th>Player</th><th>Power</th></tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
-
+<div class="card">
+  <h2>Top 30 Players</h2>
+  <table id="spieler">
+    <thead>
+      <tr><th>Rank</th><th>Alliance</th><th>Player</th><th>Power</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 </div>
 
 </div>
