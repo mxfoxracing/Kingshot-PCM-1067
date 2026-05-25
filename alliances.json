@@ -1,12 +1,12 @@
 [
-  { "rang": 1, "spieler": "SRG", "allianze": "SRG", "kraft": 16354579406 },
-  { "rang": 2, "spieler": "PCM", "allianze": "PCM", "kraft": 11455324230 },
-  { "rang": 3, "spieler": "BOO", "allianze": "BOO", "kraft": 10360463611 },
-  { "rang": 4, "spieler": "LoL", "allianze": "LoL", "kraft": 8574570624 },
-  { "rang": 5, "spieler": "SIR", "allianze": "SIR", "kraft": 5715516351 },
-  { "rang": 6, "spieler": "RGS", "allianze": "RGS", "kraft": 2203029075 },
-  { "rang": 7, "spieler": "321", "allianze": "321", "kraft": 2018656788 },
-  { "rang": 8, "spieler": "NAP", "allianze": "NAP", "kraft": 1099332599 },
-  { "rang": 9, "spieler": "SWC", "allianze": "SWC", "kraft": 1080513166 },
-  { "rang": 10, "spieler": "CWA", "allianze": "CWA", "kraft": 1065767495 }
+  { "rang": 1, "name": "SRG", "kraft": 16354579406 },
+  { "rang": 2, "name": "PCM", "kraft": 11455324230 },
+  { "rang": 3, "name": "BOO", "kraft": 10360463611 },
+  { "rang": 4, "name": "LoL", "kraft": 8574570624 },
+  { "rang": 5, "name": "SIR", "kraft": 5715516351 },
+  { "rang": 6, "name": "RGS", "kraft": 2203029075 },
+  { "rang": 7, "name": "321", "kraft": 2018656788 },
+  { "rang": 8, "name": "NAP", "kraft": 1099332599 },
+  { "rang": 9, "name": "SWC", "kraft": 1080513166 },
+  { "rang": 10, "name": "CWA", "kraft": 1065767495 }
 ]
